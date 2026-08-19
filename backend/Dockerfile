@@ -16,15 +16,15 @@ RUN apk add --no-cache \
     bash \
     git \
     curl \
-    libpng \
-    libjpeg-turbo \
-    freetype \
-    oniguruma \
-    libxml2 \
-    libxslt \
+    libpng-dev \
+    libjpeg-turbo-dev \
+    freetype-dev \
+    oniguruma-dev \
+    libxml2-dev \
+    libxslt-dev \
     zip \
     unzip \
-    libpq \
+    libpq-dev \
     icu-libs \
     zlib-dev \
     libzip-dev \
