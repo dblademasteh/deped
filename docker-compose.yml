@@ -54,7 +54,7 @@ services:
     image: cloudflare/cloudflared:latest
     container_name: laravel-cloudflared
     restart: unless-stopped
-    command: tunnel run
+    command: tunnel --no-autoupdate run --token $TUNNEL_TOKEN
     networks:
       - laravel
     env_file:
