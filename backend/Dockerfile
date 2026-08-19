@@ -25,7 +25,10 @@ RUN apk add --no-cache \
     zip \
     unzip \
     libpq \
-    icu-libs
+    icu-libs \
+    zlib-dev \
+    libzip-dev \
+    linux-headers
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo pdo_pgsql bcmath exif pcntl gd opcache intl
