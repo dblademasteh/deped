@@ -57,8 +57,8 @@ services:
     command: tunnel --no-autoupdate run
     networks:
       - laravel
-    env_file:
-      - .env.docker
+    environment:
+      - TUNNEL_TOKEN=${TUNNEL_TOKEN}
     depends_on:
       - nginx
 
