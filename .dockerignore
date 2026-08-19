@@ -1,0 +1,16 @@
+node_modules
+.git
+.env
+.env.*
+!.env.example
+storage/logs/*
+storage/framework/views/*
+storage/framework/sessions/*
+storage/framework/cache/*
+bootstrap/cache/*.php
+tests
+.vscode
+.idea
+*.md
+docker-compose.yml
+.dockerignore
