@@ -30,12 +30,10 @@ RUN apk add --no-cache \
     libzip-dev \
     linux-headers
 
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
     && docker-php-ext-install pdo pdo_pgsql bcmath exif pcntl gd opcache
-
-RUN pecl install redis && docker-php-ext-enable redis
-
-COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 WORKDIR /var/www/html
 
