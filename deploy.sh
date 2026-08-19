@@ -7,7 +7,7 @@ set -e
 
 NAS_HOST=${1:-"192.168.1.100"}
 NAS_USER=${2:-"admin"}
-GIT_REPO=${3:-"https://github.com/YOUR_USER/laravel-react-dashboard.git"}
+GIT_REPO=${3:-"https://github.com/dblademasteh/deped.git"}
 BRANCH=${4:-"main"}
 REMOTE_PATH="/volume1/docker/laravel-dashboard"
 
