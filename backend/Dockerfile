@@ -33,7 +33,8 @@ RUN apk add --no-cache \
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
 RUN docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install pdo pdo_pgsql bcmath exif pcntl gd opcache
+    && docker-php-ext-install pdo pdo_pgsql bcmath exif pcntl gd opcache \
+    && echo "clear_env = no" >> /usr/local/etc/php-fpm.d/zz-docker.conf
 
 WORKDIR /var/www/html
 

@@ -8,7 +8,6 @@ services:
     working_dir: /var/www/html
     volumes:
       - app_code:/var/www/html
-      - ./backend/.env.docker:/var/www/html/.env
       - ./backend/storage:/var/www/html/storage
       - ./backend/bootstrap/cache:/var/www/html/bootstrap/cache
     networks:
@@ -18,12 +17,17 @@ services:
     environment:
       - APP_ENV=production
       - APP_DEBUG=false
+      - APP_KEY=base64:5F272krVyHCM3lMZ7J9ap7ztF6z7vO9YoDfwbWhp0yU=
+      - APP_URL=https://deped.devbry.online
       - DB_CONNECTION=pgsql
       - DB_HOST=postgres
       - DB_PORT=5432
       - DB_DATABASE=${DB_DATABASE:-laravel_dashboard}
       - DB_USERNAME=${DB_USERNAME:-laravel}
       - DB_PASSWORD=${DB_PASSWORD:-secret}
+      - SESSION_DRIVER=database
+      - QUEUE_CONNECTION=database
+      - CACHE_STORE=database
 
   nginx:
     image: nginx:stable-alpine
